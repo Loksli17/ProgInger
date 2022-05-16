@@ -4,12 +4,28 @@ using System.Text;
 
 namespace ProgInger
 {
-    public abstract class MoneyChangeItem
+    public class MoneyChangeItem
     {
         private long     id;
         private DateTime dateTime;
         private long     money;
         private string   goal;
+
+        public MoneyChangeItem()
+        {
+            id       = 1;
+            dateTime = new DateTime();
+            money    = 322;
+            goal     = "KFC";
+        }
+
+        public MoneyChangeItem(long id, DateTime dateTime, long money, string goal)
+        {
+            this.id       = id;
+            this.dateTime = dateTime;
+            this.money    = money;
+            this.goal = goal;
+        }
 
         public long Id
         {
@@ -33,14 +49,6 @@ namespace ProgInger
         {
             get => goal;
             set => goal = value;
-        }
-
-        public MoneyChangeItem()
-        {
-            id       = 1;
-            dateTime = new DateTime();
-            money    = 322;
-            goal     = "KFC";
         }
            
     }

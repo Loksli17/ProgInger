@@ -20,12 +20,16 @@ namespace ProgInger
         private TableViewAdapter incomeTable;
         private TableViewAdapter lesionTable;
 
+        private JsonFileAdapter fileAdapter = new JsonFileAdapter();
+
 
         public Form1()
         {
             InitializeComponent();
             initIncomeTableAdapter();
             initLesionTableAdapter();
+
+            fileAdapter.saveEntity(new Income());
         }
 
 
@@ -35,9 +39,9 @@ namespace ProgInger
 
             string[][] columns = {
                 new string[] { "id",    "Id" },
-                new string[] { "date",  "Date" },
-                new string[] { "goal",  "Goal" },
-                new string[] { "money", "Money+" },
+                new string[] { "date",  "Дата" },
+                new string[] { "goal",  "Источник поступления" },
+                new string[] { "money", "Поступление" },
             };
 
             incomeTable.initColumns(columns);
@@ -61,9 +65,9 @@ namespace ProgInger
 
             string[][] columns = {
                 new string[] { "id",    "Id" },
-                new string[] { "date",  "Date" },
-                new string[] { "goal",  "Goal" },
-                new string[] { "money", "Money-" },
+                new string[] { "date",  "Дата" },
+                new string[] { "goal",  "Предмет траты" },
+                new string[] { "money", "Убыток" },
             };
 
             lesionTable.initColumns(columns);
