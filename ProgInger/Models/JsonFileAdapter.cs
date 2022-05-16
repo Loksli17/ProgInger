@@ -16,21 +16,25 @@ namespace ProgInger
     class JsonFileAdapter
     {
 
-        public void saveEntity(MoneyChangeItem item)
+        private string fileName = "";
+
+        private JsonStructure getDataFromFile()
         {
+
             string fileContent = "";
 
             try
             {
                 fileContent = System.IO.File.ReadAllText("../../../income.json");
-            } catch (System.IO.FileNotFoundException e)
+            }
+            catch (System.IO.FileNotFoundException e)
             {
                 Debug.WriteLine(e.ToString());
             }
 
             Debug.WriteLine(fileContent);
 
-            JsonStructure json;
+            JsonStructure json = new JsonStructure();
 
             try
             {
@@ -41,25 +45,37 @@ namespace ProgInger
             catch (JsonException e)
             {
                 Debug.WriteLine(e.ToString());
-            } catch(NotSupportedException e)
+            }
+            catch (NotSupportedException e)
             {
                 Debug.WriteLine(e.ToString());
             }
 
-            //json.data.Add(item);
-            //string jsonString = JsonSerializer.Serialize(json);
+            return json;
+        }
 
-            
-            //Debug.WriteLine(JsonSerializer.Serialize(item));
 
-            //try
-            //{
-            //    System.IO.File.WriteAllText("../../../income.json", jsonString);
-            //}
-            //catch (System.IO.FileNotFoundException e)
-            //{
-            //    Debug.WriteLine(e.ToString());
-            //}
+        private void writeDataInFile(JsonStructure json)
+        {
+            string jsonString = JsonSerializer.Serialize(json);
+
+            try
+            {
+                System.IO.File.WriteAllText("../../../income.json", jsonString);
+            }
+            catch (System.IO.FileNotFoundException e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
+        }
+
+
+        public void saveEntity(MoneyChangeItem item)
+        {
+
+            JsonStructure json = getDataFromFile();
+            json.data.Add(item);
+            writeDataInFile(json);
         }
     }
 }

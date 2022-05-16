@@ -1,10 +1,1 @@
-{
-  "data": [
-    {
-      "Id": 1,
-      "DateTime": "0001-01-01T00:00:00",
-      "Money": 322,
-      "Goal": "KFC"
-    }
-  ]
-}
+{"data":[{"Id":1,"DateTime":"0001-01-01T00:00:00","Money":322,"Goal":"KFC"},{"Id":1,"DateTime":"0001-01-01T00:00:00","Money":322,"Goal":"KFC"}]}
