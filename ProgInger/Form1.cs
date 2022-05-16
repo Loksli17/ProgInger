@@ -14,53 +14,70 @@ namespace ProgInger
     public partial class Form1 : Form
     {
 
-        private List<Income> incomeItems = new List<Income>();
+        private List<MoneyChangeItem> incomeItems = new List<MoneyChangeItem>();
+        private List<MoneyChangeItem> lesionItems = new List<MoneyChangeItem>();
+
+        private TableViewAdapter incomeTable;
+        private TableViewAdapter lesionTable;
+
 
         public Form1()
         {
             InitializeComponent();
-
-            initColumns();
-
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-
-            pushRowsInGridView(incomeItems);
+            initIncomeTableAdapter();
+            initLesionTableAdapter();
         }
 
 
-        private void initColumns()
+        private void initIncomeTableAdapter()
         {
+            incomeTable = new TableViewAdapter(incomesView);
+
             string[][] columns = {
-                new string[] { "id",     "Id" },
-                new string[] { "date",   "Date" },
-                new string[] { "goal",   "Goal" },
-                new string[] { "money+", "Money" },
+                new string[] { "id",    "Id" },
+                new string[] { "date",  "Date" },
+                new string[] { "goal",  "Goal" },
+                new string[] { "money", "Money+" },
             };
 
-            for (int i = 0; i < columns.Length; i++)
-            {
-                DataGridViewColumn col = new DataGridViewColumn();
-                col.Name = columns[i][0];
-                col.HeaderText = columns[i][1];
-                col.CellTemplate = new DataGridViewTextBoxCell();
-                incomesView.Columns.Insert(i, col);
-            }
+            incomeTable.initColumns(columns);
+
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+            incomeItems.Add(new Income());
+
+            incomeTable.pushRowsInGridView(incomeItems);
         }
 
-        
-        private void pushRowsInGridView(List<Income> items)
-        {
 
-            items.ForEach((Income item) => {
-                incomesView.Rows.Add(item.Id, item.DateTime, item.Goal, item.Money);
-            });
+        private void initLesionTableAdapter()
+        {
+            lesionTable = new TableViewAdapter(lecionsView);
+
+            string[][] columns = {
+                new string[] { "id",    "Id" },
+                new string[] { "date",  "Date" },
+                new string[] { "goal",  "Goal" },
+                new string[] { "money", "Money-" },
+            };
+
+            lesionTable.initColumns(columns);
+
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+            lesionItems.Add(new Lesion());
+
+            lesionTable.pushRowsInGridView(lesionItems);
         }
     }
 }

@@ -30,13 +30,13 @@ namespace ProgInger
         private void InitializeComponent()
         {
             this.incomesView = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lecionsView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).BeginInit();
             this.SuspendLayout();
             // 
             // incomesView
@@ -48,14 +48,14 @@ namespace ProgInger
             this.incomesView.Size = new System.Drawing.Size(476, 366);
             this.incomesView.TabIndex = 0;
             // 
-            // dataGridView1
+            // lecionsView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(523, 198);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(504, 366);
-            this.dataGridView1.TabIndex = 1;
+            this.lecionsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lecionsView.Location = new System.Drawing.Point(523, 198);
+            this.lecionsView.Name = "lecionsView";
+            this.lecionsView.RowTemplate.Height = 25;
+            this.lecionsView.Size = new System.Drawing.Size(504, 366);
+            this.lecionsView.TabIndex = 1;
             // 
             // label1
             // 
@@ -102,12 +102,12 @@ namespace ProgInger
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lecionsView);
             this.Controls.Add(this.incomesView);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,7 +116,7 @@ namespace ProgInger
         #endregion
 
         private System.Windows.Forms.DataGridView incomesView;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView lecionsView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
