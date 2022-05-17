@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -48,23 +49,53 @@ namespace ProgInger
             //incomeFileAdapter.saveEntity(new Income());
             //lesionFileAdapter.saveEntity(new Lesion());
 
-            incomeItems = incomeFileAdapter.getAll();
-            lesionItems = lesionFileAdapter.getAll();
+            initDropDownMonths();
+            initDropDownYears();
+
+            incomeItems = incomeFileAdapter.getAll(int.Parse(yearDropView.SelectedItem.ToString()), monthDropView.SelectedIndex);
+            lesionItems = lesionFileAdapter.getAll(int.Parse(yearDropView.SelectedItem.ToString()), monthDropView.SelectedIndex);
 
             initIncomeTableAdapter();
             initLesionTableAdapter();
 
-            initDropDown();
+            countMonthResult();
         }
 
-        private void initDropDown()
+
+        private void initDropDownMonths()
         {
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = months;
-            monthDropView.DataSource = bindingSource;
+            var bindingSourceMonth = new BindingSource();
+            bindingSourceMonth.DataSource = months;
+            monthDropView.DataSource = bindingSourceMonth;
         }
 
 
+        private void initDropDownYears()
+        {
+            DateTime dateTime = DateTime.Today;
+
+            string firstYear; 
+            
+            if(incomeFileAdapter.getMinYear() < lesionFileAdapter.getMinYear())
+            {
+                firstYear = incomeFileAdapter.getMinYear().ToString();
+            } else {
+                firstYear = lesionFileAdapter.getMinYear().ToString();
+            }
+
+            years.Add(firstYear);
+
+            for (int i = 0; i < dateTime.Year - int.Parse(years[0]); i++)
+            {
+                years.Add((int.Parse(years[0]) + i + 1).ToString());
+            }
+
+            var bindingSourceYears = new BindingSource();
+            bindingSourceYears.DataSource = years;
+            yearDropView.DataSource = bindingSourceYears;
+        }
+
+ 
         private void initIncomeTableAdapter()
         {
             incomeTable = new TableViewAdapter(incomesView);
@@ -98,6 +129,38 @@ namespace ProgInger
             lesionTable.pushRowsInGridView(lesionItems);
         }
 
+
+        private void filterData()
+        {
+            if (yearDropView.SelectedItem != null) incomeItems = incomeFileAdapter.getAll(int.Parse(yearDropView.SelectedItem.ToString()), monthDropView.SelectedIndex);
+            if (yearDropView.SelectedItem != null) lesionItems = lesionFileAdapter.getAll(int.Parse(yearDropView.SelectedItem.ToString()), monthDropView.SelectedIndex);
+
+            if (incomeTable != null) incomeTable.setRows(incomeItems);
+            if (lesionTable != null) lesionTable.setRows(lesionItems);
+
+            if (incomeTable != null && lesionTable != null) countMonthResult();
+        }
+
+        
+        private void countMonthResult()
+        {
+
+            long result = 0;
+
+            incomeItems.ForEach((MoneyChangeItem item) =>
+            {
+                result += item.Money;
+            });
+
+            lesionItems.ForEach((MoneyChangeItem item) =>
+            {
+                result += item.Money;
+            });
+
+            monthResultView.Text = result.ToString();
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             FormCreateIncome form = new FormCreateIncome();
@@ -105,9 +168,15 @@ namespace ProgInger
             form.Dispose();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void yearDropView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filterData();
+        }
+
+        private void monthDropView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filterData();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ProgInger
 {
     class Lesion : MoneyChangeItem
@@ -12,6 +13,7 @@ namespace ProgInger
         {
             countId++;
             id = countId;
+            money *= -1;
         }
     }
 }

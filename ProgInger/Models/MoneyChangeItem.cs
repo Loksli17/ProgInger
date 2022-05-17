@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ProgInger
 {
     public class MoneyChangeItem
@@ -50,6 +51,17 @@ namespace ProgInger
             get => goal;
             set => goal = value;
         }
-           
+
+
+        public int getYear()
+        {
+            return dateTime.Year;
+        }
+
+        public int getMonth()
+        {
+            return dateTime.Month;
+
+        }
     }
 }

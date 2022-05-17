@@ -37,6 +37,8 @@ namespace ProgInger
             this.button2 = new System.Windows.Forms.Button();
             this.monthDropView = new System.Windows.Forms.ComboBox();
             this.yearDropView = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.monthResultView = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).BeginInit();
             this.SuspendLayout();
@@ -103,6 +105,7 @@ namespace ProgInger
             this.monthDropView.Name = "monthDropView";
             this.monthDropView.Size = new System.Drawing.Size(121, 23);
             this.monthDropView.TabIndex = 6;
+            this.monthDropView.SelectedIndexChanged += new System.EventHandler(this.monthDropView_SelectedIndexChanged);
             // 
             // yearDropView
             // 
@@ -111,13 +114,33 @@ namespace ProgInger
             this.yearDropView.Name = "yearDropView";
             this.yearDropView.Size = new System.Drawing.Size(121, 23);
             this.yearDropView.TabIndex = 7;
-            this.yearDropView.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.yearDropView.SelectedIndexChanged += new System.EventHandler(this.yearDropView_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(899, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Итог за месяц";
+            // 
+            // monthResultView
+            // 
+            this.monthResultView.AutoSize = true;
+            this.monthResultView.Location = new System.Drawing.Point(1014, 122);
+            this.monthResultView.Name = "monthResultView";
+            this.monthResultView.Size = new System.Drawing.Size(13, 15);
+            this.monthResultView.TabIndex = 9;
+            this.monthResultView.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 587);
+            this.Controls.Add(this.monthResultView);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.yearDropView);
             this.Controls.Add(this.monthDropView);
             this.Controls.Add(this.button2);
@@ -145,6 +168,8 @@ namespace ProgInger
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox monthDropView;
         private System.Windows.Forms.ComboBox yearDropView;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label monthResultView;
     }
 }
 

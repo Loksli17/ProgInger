@@ -40,8 +40,6 @@ namespace ProgInger
                 Debug.WriteLine(e.ToString());
             }
 
-            Debug.WriteLine(fileContent);
-
             JsonStructure json = new JsonStructure();
 
             try
@@ -86,10 +84,18 @@ namespace ProgInger
         }
 
         
-        public List<MoneyChangeItem> getAll()
+        public List<MoneyChangeItem> getAll(int year, int month)
         {
-            JsonStructure json = getDataFromFile();
-            return new List<MoneyChangeItem>(json.data);
+            JsonStructure         json   = getDataFromFile();
+            List<MoneyChangeItem> result = new List<MoneyChangeItem>();
+
+            new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
+            {
+                Debug.WriteLine("AZAZA" + item.getMonth() + "" + (month + 1));
+                if (item.getYear() == year && item.getMonth() == month + 1) result.Add(item);
+            });
+            
+            return result;
         }
 
 
@@ -97,6 +103,21 @@ namespace ProgInger
         {
             JsonStructure json = getDataFromFile();
             return json.data[json.data.Count - 1];
+        }
+
+
+        public int getMinYear()
+        {
+            JsonStructure json = getDataFromFile();
+
+            int min = int.MaxValue;
+
+            new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
+            {
+                min = item.getYear() < min ? item.getYear() : min;
+            });
+
+            return min;
         }
     }
 }

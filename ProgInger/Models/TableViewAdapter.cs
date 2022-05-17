@@ -31,6 +31,15 @@ namespace ProgInger
 
         public void pushRowsInGridView(List<MoneyChangeItem> items)
         {
+            items.ForEach((MoneyChangeItem item) => {
+                view.Rows.Add(item.Id, item.DateTime, item.Goal, item.Money);
+            });
+        }
+
+
+        public void setRows(List<MoneyChangeItem> items)
+        {
+            view.Rows.Clear();
 
             items.ForEach((MoneyChangeItem item) => {
                 view.Rows.Add(item.Id, item.DateTime, item.Goal, item.Money);
