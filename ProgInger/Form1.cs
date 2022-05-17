@@ -59,6 +59,9 @@ namespace ProgInger
             initLesionTableAdapter();
 
             countMonthResult();
+
+            Debug.WriteLine(incomeFileAdapter.getMonthsInfo(int.Parse(yearDropView.SelectedItem.ToString()))[0].Money);
+            Debug.WriteLine(incomeFileAdapter.getMonthsInfo(int.Parse(yearDropView.SelectedItem.ToString()))[0].Month);
         }
 
 

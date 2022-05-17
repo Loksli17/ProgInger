@@ -3,37 +3,37 @@
     {
       "Id": 1,
       "DateTime": "2021-01-01T00:00:00",
-      "Money": 322,
+      "Money": -322,
       "Goal": "KFC"
     },
     {
       "Id": 2,
       "DateTime": "2021-01-01T00:00:00",
-      "Money": 322,
+      "Money": -322,
       "Goal": "KFC"
     },
     {
       "Id": 3,
       "DateTime": "2021-01-01T00:00:00",
-      "Money": 322,
+      "Money": -322,
       "Goal": "KFC"
     },
     {
       "Id": 4,
       "DateTime": "2021-01-01T00:00:00",
-      "Money": 322,
+      "Money": -322,
       "Goal": "KFC"
     },
     {
       "Id": 5,
       "DateTime": "2021-01-01T00:00:00",
-      "Money": 322,
+      "Money": -322,
       "Goal": "KFC"
     },
     {
       "Id": 6,
       "DateTime": "2021-01-01T00:00:00",
-      "Money": 322,
+      "Money": -322,
       "Goal": "KFC"
     }
   ]

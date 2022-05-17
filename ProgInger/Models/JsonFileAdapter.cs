@@ -45,8 +45,6 @@ namespace ProgInger
             try
             {
                 json = JsonSerializer.Deserialize<JsonStructure>(fileContent);
-                Debug.WriteLine(json.ToString());
-                Debug.WriteLine(json.data.Count);
             }
             catch (JsonException e)
             {
@@ -90,8 +88,7 @@ namespace ProgInger
             List<MoneyChangeItem> result = new List<MoneyChangeItem>();
 
             new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
-            {
-                Debug.WriteLine("AZAZA" + item.getMonth() + "" + (month + 1));
+            { 
                 if (item.getYear() == year && item.getMonth() == month + 1) result.Add(item);
             });
             
@@ -118,6 +115,37 @@ namespace ProgInger
             });
 
             return min;
+        }
+
+        
+        public List<MonthInfo> getMonthsInfo(int year)
+        {
+
+            Debug.WriteLine(year);
+
+            List<MonthInfo> months = new List<MonthInfo>();
+
+            months.Add(new MonthInfo("Январь", 0));
+            months.Add(new MonthInfo("Февраль", 0));
+            months.Add(new MonthInfo("Март", 0));
+            months.Add(new MonthInfo("Апрель", 0));
+            months.Add(new MonthInfo("Май", 0));
+            months.Add(new MonthInfo("Июнь", 0));
+            months.Add(new MonthInfo("Июль", 0));
+            months.Add(new MonthInfo("Август", 0));
+            months.Add(new MonthInfo("Сентябрь", 0));
+            months.Add(new MonthInfo("Октябрь", 0));
+            months.Add(new MonthInfo("Ноябрь", 0));
+            months.Add(new MonthInfo("Декабрь", 0));
+
+            JsonStructure json = getDataFromFile();
+
+            new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
+            {
+                if(year == item.getYear()) months[item.getMonth() - 1].Money += item.Money;
+            });
+
+            return months;
         }
     }
 }
