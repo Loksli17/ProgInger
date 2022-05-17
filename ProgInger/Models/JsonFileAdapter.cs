@@ -18,6 +18,11 @@ namespace ProgInger
 
         private string fileName = "";
 
+        public JsonFileAdapter(string fileName)
+        {
+            this.fileName = fileName;
+        }
+
         private JsonStructure getDataFromFile()
         {
 
@@ -25,7 +30,7 @@ namespace ProgInger
 
             try
             {
-                fileContent = System.IO.File.ReadAllText("../../../income.json");
+                fileContent = System.IO.File.ReadAllText("../../../" + fileName);
             }
             catch (System.IO.FileNotFoundException e)
             {
@@ -61,7 +66,7 @@ namespace ProgInger
 
             try
             {
-                System.IO.File.WriteAllText("../../../income.json", jsonString);
+                System.IO.File.WriteAllText("../../../" + fileName, jsonString);
             }
             catch (System.IO.FileNotFoundException e)
             {
@@ -72,10 +77,23 @@ namespace ProgInger
 
         public void saveEntity(MoneyChangeItem item)
         {
-
             JsonStructure json = getDataFromFile();
             json.data.Add(item);
             writeDataInFile(json);
+        }
+
+        
+        public List<MoneyChangeItem> getAll()
+        {
+            JsonStructure json = getDataFromFile();
+            return new List<MoneyChangeItem>(json.data);
+        }
+
+
+        public MoneyChangeItem getLast()
+        {
+            JsonStructure json = getDataFromFile();
+            return json.data[json.data.Count - 1];
         }
     }
 }

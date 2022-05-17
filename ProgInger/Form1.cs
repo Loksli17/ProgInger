@@ -20,16 +20,23 @@ namespace ProgInger
         private TableViewAdapter incomeTable;
         private TableViewAdapter lesionTable;
 
-        private JsonFileAdapter fileAdapter = new JsonFileAdapter();
+        private JsonFileAdapter incomeFileAdapter = new JsonFileAdapter("income.json");
+        private JsonFileAdapter lesionFileAdapter = new JsonFileAdapter("lesion.json");
 
 
         public Form1()
         {
             InitializeComponent();
+           
+
+            //incomeFileAdapter.saveEntity(new Income());
+            //lesionFileAdapter.saveEntity(new Lesion());
+
+            incomeItems = incomeFileAdapter.getAll();
+            lesionItems = lesionFileAdapter.getAll();
+
             initIncomeTableAdapter();
             initLesionTableAdapter();
-
-            fileAdapter.saveEntity(new Income());
         }
 
 
@@ -46,14 +53,14 @@ namespace ProgInger
 
             incomeTable.initColumns(columns);
 
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
-            incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
+            //incomeItems.Add(new Income());
 
             incomeTable.pushRowsInGridView(incomeItems);
         }
@@ -72,14 +79,14 @@ namespace ProgInger
 
             lesionTable.initColumns(columns);
 
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
-            lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
+            //lesionItems.Add(new Lesion());
 
             lesionTable.pushRowsInGridView(lesionItems);
         }

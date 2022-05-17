@@ -6,10 +6,10 @@ namespace ProgInger
 {
     public class MoneyChangeItem
     {
-        private long     id;
-        private DateTime dateTime;
-        private long     money;
-        private string   goal;
+        protected long     id;
+        protected DateTime dateTime;
+        protected long     money;
+        protected string   goal;
 
         public MoneyChangeItem()
         {
