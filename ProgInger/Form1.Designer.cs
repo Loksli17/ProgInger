@@ -35,6 +35,8 @@ namespace ProgInger
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.monthDropView = new System.Windows.Forms.ComboBox();
+            this.yearDropView = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +85,7 @@ namespace ProgInger
             this.button1.TabIndex = 4;
             this.button1.Text = "Добавить доход";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -93,11 +96,30 @@ namespace ProgInger
             this.button2.Text = "Добавить убыток";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // monthDropView
+            // 
+            this.monthDropView.FormattingEnabled = true;
+            this.monthDropView.Location = new System.Drawing.Point(376, 122);
+            this.monthDropView.Name = "monthDropView";
+            this.monthDropView.Size = new System.Drawing.Size(121, 23);
+            this.monthDropView.TabIndex = 6;
+            // 
+            // yearDropView
+            // 
+            this.yearDropView.FormattingEnabled = true;
+            this.yearDropView.Location = new System.Drawing.Point(512, 122);
+            this.yearDropView.Name = "yearDropView";
+            this.yearDropView.Size = new System.Drawing.Size(121, 23);
+            this.yearDropView.TabIndex = 7;
+            this.yearDropView.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 587);
+            this.Controls.Add(this.yearDropView);
+            this.Controls.Add(this.monthDropView);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -121,6 +143,8 @@ namespace ProgInger
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox monthDropView;
+        private System.Windows.Forms.ComboBox yearDropView;
     }
 }
 

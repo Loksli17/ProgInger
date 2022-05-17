@@ -17,11 +17,14 @@ namespace ProgInger
     {
 
         private string fileName = "";
+        private string path     = "../../../json/";
+
 
         public JsonFileAdapter(string fileName)
         {
             this.fileName = fileName;
         }
+
 
         private JsonStructure getDataFromFile()
         {
@@ -30,7 +33,7 @@ namespace ProgInger
 
             try
             {
-                fileContent = System.IO.File.ReadAllText("../../../" + fileName);
+                fileContent = System.IO.File.ReadAllText(path + fileName);
             }
             catch (System.IO.FileNotFoundException e)
             {
@@ -66,7 +69,7 @@ namespace ProgInger
 
             try
             {
-                System.IO.File.WriteAllText("../../../" + fileName, jsonString);
+                System.IO.File.WriteAllText(path + fileName, jsonString);
             }
             catch (System.IO.FileNotFoundException e)
             {
