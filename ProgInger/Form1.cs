@@ -45,9 +45,6 @@ namespace ProgInger
         public Form1()
         {
             InitializeComponent();
-           
-            //incomeFileAdapter.saveEntity(new Income());
-            //lesionFileAdapter.saveEntity(new Lesion());
 
             initDropDownMonths();
             initDropDownYears();
@@ -81,7 +78,6 @@ namespace ProgInger
         private void monthViewBind()
         {
             if (yearDropView.SelectedItem == null) return;
-            Debug.WriteLine(yearDropView.SelectedItem.ToString());
 
             monthView.Items.Clear();
 
@@ -227,16 +223,24 @@ namespace ProgInger
 
         private void incomesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int rowInd = e.RowIndex;
+            int eventIndex = int.Parse(incomesView.Rows[rowInd].Cells[0].Value.ToString());
+
             if (e.ColumnIndex == incomesView.Columns.Count - 1)
             {
                 //edit
-               
+                FormEdit.type = "income";
+                FormEdit.id   = eventIndex;
+                FormEdit form = new FormEdit();
+    
+                form.ShowDialog(this);
+                form.Dispose();
+
+                filterData();
             }
             else if(e.ColumnIndex == incomesView.Columns.Count - 2)
             {
                 //delete
-                int rowInd = e.RowIndex;
-                int eventIndex = int.Parse(incomesView.Rows[rowInd].Cells[0].Value.ToString());
                 incomeFileAdapter.removeById(eventIndex);
             }
 
@@ -246,16 +250,25 @@ namespace ProgInger
 
         private void lecionsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            int rowInd = e.RowIndex;
+            int eventIndex = int.Parse(lecionsView.Rows[rowInd].Cells[0].Value.ToString());
+
             if (e.ColumnIndex == lecionsView.Columns.Count - 1)
             {
                 //edit
+                FormEdit.type = "lesion";
+                FormEdit.id   = eventIndex;
+                FormEdit form = new FormEdit();
 
+                form.ShowDialog(this);
+                form.Dispose();
+
+                filterData();
             }
             else if (e.ColumnIndex == lecionsView.Columns.Count - 2)
             {
                 //delete
-                int rowInd = e.RowIndex;
-                int eventIndex = int.Parse(lecionsView.Rows[rowInd].Cells[0].Value.ToString());
                 lesionFileAdapter.removeById(eventIndex);
             }
 

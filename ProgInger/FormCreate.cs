@@ -18,14 +18,12 @@ namespace ProgInger
 
             if (type == "income")
             {
-                Debug.WriteLine("income");
                 moneyView.Maximum = 1000000;
                 moneyView.Minimum = 1;
                 label5.Text = "Добавление дохода";
             }
             else
             {
-                Debug.WriteLine("lesion");
                 moneyView.Maximum = -1;
                 moneyView.Minimum = -1000000;
                 label5.Text = "Добавление убытка";

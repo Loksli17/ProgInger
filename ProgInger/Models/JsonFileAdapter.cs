@@ -116,6 +116,20 @@ namespace ProgInger
         }
 
 
+        public MoneyChangeItem getById(long id)
+        {
+            JsonStructure   json   = getDataFromFile();
+            MoneyChangeItem result = null;
+
+            new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
+            {
+                if (item.Id == id) result = item;
+            });
+
+            return result != null ? result : null;
+        }
+
+
         public int getMinYear()
         {
             JsonStructure json = getDataFromFile();
@@ -133,8 +147,6 @@ namespace ProgInger
         
         public List<MonthInfo> getMonthsInfo(int year)
         {
-
-            Debug.WriteLine(year);
 
             List<MonthInfo> months = new List<MonthInfo>();
 
