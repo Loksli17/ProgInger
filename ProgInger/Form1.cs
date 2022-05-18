@@ -60,8 +60,7 @@ namespace ProgInger
 
             countMonthResult();
 
-            Debug.WriteLine(incomeFileAdapter.getMonthsInfo(int.Parse(yearDropView.SelectedItem.ToString()))[0].Money);
-            Debug.WriteLine(incomeFileAdapter.getMonthsInfo(int.Parse(yearDropView.SelectedItem.ToString()))[0].Month);
+            monthViewBind();
         }
 
 
@@ -70,6 +69,24 @@ namespace ProgInger
             var bindingSourceMonth = new BindingSource();
             bindingSourceMonth.DataSource = months;
             monthDropView.DataSource = bindingSourceMonth;
+        }
+
+        private void monthViewBind()
+        {
+            if (yearDropView.SelectedItem == null) return;
+            Debug.WriteLine(yearDropView.SelectedItem.ToString());
+
+            monthView.Items.Clear();
+
+            List<MonthInfo> monthsInfoIncome = incomeFileAdapter.getMonthsInfo(int.Parse(yearDropView.SelectedItem.ToString()));
+            List<MonthInfo> monthsInfoLesion = lesionFileAdapter.getMonthsInfo(int.Parse(yearDropView.SelectedItem.ToString()));
+
+            for (int i = 0; i < monthsInfoIncome.Count; i++)
+            {
+                ListViewItem listItem = new ListViewItem(monthsInfoIncome[i].Month);
+                listItem.SubItems.Add((monthsInfoIncome[i].Money + monthsInfoLesion[i].Money).ToString());
+                monthView.Items.Add(listItem);
+            }
         }
 
 
@@ -142,6 +159,8 @@ namespace ProgInger
             if (lesionTable != null) lesionTable.setRows(lesionItems);
 
             if (incomeTable != null && lesionTable != null) countMonthResult();
+
+            monthViewBind();
         }
 
         
@@ -174,12 +193,12 @@ namespace ProgInger
 
         private void yearDropView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            filterData();
+            if(yearDropView.SelectedItem != null) filterData();
         }
 
         private void monthDropView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            filterData();
+            if (monthDropView.SelectedItem != null) filterData();
         }
     }
 }

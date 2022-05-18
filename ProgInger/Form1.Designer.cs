@@ -39,6 +39,9 @@ namespace ProgInger
             this.yearDropView = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.monthResultView = new System.Windows.Forms.Label();
+            this.monthView = new System.Windows.Forms.ListView();
+            this.month = new System.Windows.Forms.ColumnHeader();
+            this.result = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +49,7 @@ namespace ProgInger
             // incomesView
             // 
             this.incomesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.incomesView.Location = new System.Drawing.Point(21, 198);
+            this.incomesView.Location = new System.Drawing.Point(22, 144);
             this.incomesView.Name = "incomesView";
             this.incomesView.RowTemplate.Height = 25;
             this.incomesView.Size = new System.Drawing.Size(476, 366);
@@ -55,7 +58,7 @@ namespace ProgInger
             // lecionsView
             // 
             this.lecionsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lecionsView.Location = new System.Drawing.Point(523, 198);
+            this.lecionsView.Location = new System.Drawing.Point(524, 144);
             this.lecionsView.Name = "lecionsView";
             this.lecionsView.RowTemplate.Height = 25;
             this.lecionsView.Size = new System.Drawing.Size(504, 366);
@@ -64,7 +67,7 @@ namespace ProgInger
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 170);
+            this.label1.Location = new System.Drawing.Point(22, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 15);
             this.label1.TabIndex = 2;
@@ -73,7 +76,7 @@ namespace ProgInger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(523, 170);
+            this.label2.Location = new System.Drawing.Point(524, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 3;
@@ -81,7 +84,7 @@ namespace ProgInger
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 111);
+            this.button1.Location = new System.Drawing.Point(22, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 43);
             this.button1.TabIndex = 4;
@@ -91,7 +94,7 @@ namespace ProgInger
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(168, 111);
+            this.button2.Location = new System.Drawing.Point(169, 57);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 43);
             this.button2.TabIndex = 5;
@@ -101,7 +104,7 @@ namespace ProgInger
             // monthDropView
             // 
             this.monthDropView.FormattingEnabled = true;
-            this.monthDropView.Location = new System.Drawing.Point(376, 122);
+            this.monthDropView.Location = new System.Drawing.Point(377, 68);
             this.monthDropView.Name = "monthDropView";
             this.monthDropView.Size = new System.Drawing.Size(121, 23);
             this.monthDropView.TabIndex = 6;
@@ -110,7 +113,7 @@ namespace ProgInger
             // yearDropView
             // 
             this.yearDropView.FormattingEnabled = true;
-            this.yearDropView.Location = new System.Drawing.Point(512, 122);
+            this.yearDropView.Location = new System.Drawing.Point(513, 68);
             this.yearDropView.Name = "yearDropView";
             this.yearDropView.Size = new System.Drawing.Size(121, 23);
             this.yearDropView.TabIndex = 7;
@@ -119,7 +122,7 @@ namespace ProgInger
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(899, 122);
+            this.label3.Location = new System.Drawing.Point(900, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 8;
@@ -128,17 +131,39 @@ namespace ProgInger
             // monthResultView
             // 
             this.monthResultView.AutoSize = true;
-            this.monthResultView.Location = new System.Drawing.Point(1014, 122);
+            this.monthResultView.Location = new System.Drawing.Point(1015, 68);
             this.monthResultView.Name = "monthResultView";
             this.monthResultView.Size = new System.Drawing.Size(13, 15);
             this.monthResultView.TabIndex = 9;
             this.monthResultView.Text = "0";
             // 
+            // monthView
+            // 
+            this.monthView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.month,
+            this.result});
+            this.monthView.HideSelection = false;
+            this.monthView.Location = new System.Drawing.Point(1055, 34);
+            this.monthView.Name = "monthView";
+            this.monthView.Size = new System.Drawing.Size(218, 476);
+            this.monthView.TabIndex = 10;
+            this.monthView.UseCompatibleStateImageBehavior = false;
+            this.monthView.View = System.Windows.Forms.View.Details;
+            // 
+            // month
+            // 
+            this.month.Text = "Месяц";
+            // 
+            // result
+            // 
+            this.result.Text = "Итог";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 587);
+            this.ClientSize = new System.Drawing.Size(1285, 547);
+            this.Controls.Add(this.monthView);
             this.Controls.Add(this.monthResultView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.yearDropView);
@@ -170,6 +195,9 @@ namespace ProgInger
         private System.Windows.Forms.ComboBox yearDropView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label monthResultView;
+        private System.Windows.Forms.ListView monthView;
+        private System.Windows.Forms.ColumnHeader month;
+        private System.Windows.Forms.ColumnHeader result;
     }
 }
 
