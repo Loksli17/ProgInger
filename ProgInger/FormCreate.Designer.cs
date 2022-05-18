@@ -44,12 +44,13 @@ namespace ProgInger
             // 
             // createIncomeBtn
             // 
+            this.createIncomeBtn.BackColor = System.Drawing.Color.LightGreen;
             this.createIncomeBtn.Location = new System.Drawing.Point(26, 250);
             this.createIncomeBtn.Name = "createIncomeBtn";
             this.createIncomeBtn.Size = new System.Drawing.Size(136, 54);
             this.createIncomeBtn.TabIndex = 0;
             this.createIncomeBtn.Text = "Добавить";
-            this.createIncomeBtn.UseVisualStyleBackColor = true;
+            this.createIncomeBtn.UseVisualStyleBackColor = false;
             this.createIncomeBtn.Click += new System.EventHandler(this.createIncomeBtn_Click);
             // 
             // label1

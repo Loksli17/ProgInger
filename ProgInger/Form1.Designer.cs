@@ -131,74 +131,85 @@ namespace ProgInger
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(22, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(122, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Доходы (Месяц)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(467, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 15);
+            this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Убытки (Месяц)";
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightGreen;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(24, 32);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 43);
+            this.button1.Size = new System.Drawing.Size(157, 43);
             this.button1.TabIndex = 4;
             this.button1.Text = "Добавить доход";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(171, 32);
+            this.button2.BackColor = System.Drawing.Color.Pink;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(196, 32);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 43);
+            this.button2.Size = new System.Drawing.Size(165, 43);
             this.button2.TabIndex = 5;
             this.button2.Text = "Добавить убыток";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // monthDropView
             // 
             this.monthDropView.FormattingEnabled = true;
-            this.monthDropView.Location = new System.Drawing.Point(361, 43);
+            this.monthDropView.ItemHeight = 15;
+            this.monthDropView.Location = new System.Drawing.Point(595, 43);
             this.monthDropView.Name = "monthDropView";
-            this.monthDropView.Size = new System.Drawing.Size(121, 23);
+            this.monthDropView.Size = new System.Drawing.Size(144, 23);
             this.monthDropView.TabIndex = 6;
             this.monthDropView.SelectedIndexChanged += new System.EventHandler(this.monthDropView_SelectedIndexChanged);
             // 
             // yearDropView
             // 
             this.yearDropView.FormattingEnabled = true;
-            this.yearDropView.Location = new System.Drawing.Point(498, 43);
+            this.yearDropView.Location = new System.Drawing.Point(745, 43);
             this.yearDropView.Name = "yearDropView";
-            this.yearDropView.Size = new System.Drawing.Size(121, 23);
+            this.yearDropView.Size = new System.Drawing.Size(144, 23);
             this.yearDropView.TabIndex = 7;
             this.yearDropView.SelectedIndexChanged += new System.EventHandler(this.yearDropView_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(659, 51);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(378, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.Size = new System.Drawing.Size(127, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Итог за месяц";
             // 
             // monthResultView
             // 
             this.monthResultView.AutoSize = true;
-            this.monthResultView.Location = new System.Drawing.Point(774, 51);
+            this.monthResultView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthResultView.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.monthResultView.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.monthResultView.Location = new System.Drawing.Point(511, 41);
             this.monthResultView.Name = "monthResultView";
-            this.monthResultView.Size = new System.Drawing.Size(13, 15);
+            this.monthResultView.Size = new System.Drawing.Size(24, 27);
             this.monthResultView.TabIndex = 9;
             this.monthResultView.Text = "0";
             // 
@@ -207,6 +218,7 @@ namespace ProgInger
             this.monthView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.month,
             this.result});
+            this.monthView.GridLines = true;
             this.monthView.HideSelection = false;
             this.monthView.Location = new System.Drawing.Point(912, 144);
             this.monthView.Name = "monthView";
@@ -228,18 +240,20 @@ namespace ProgInger
             // currentYearView
             // 
             this.currentYearView.AutoSize = true;
+            this.currentYearView.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.currentYearView.Location = new System.Drawing.Point(912, 116);
             this.currentYearView.Name = "currentYearView";
-            this.currentYearView.Size = new System.Drawing.Size(31, 15);
+            this.currentYearView.Size = new System.Drawing.Size(41, 20);
             this.currentYearView.TabIndex = 11;
             this.currentYearView.Text = "0000";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(949, 116);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(959, 116);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 15);
+            this.label5.Size = new System.Drawing.Size(32, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "год";
             // 
