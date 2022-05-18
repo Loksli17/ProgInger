@@ -1,7 +1,7 @@
 ﻿
 namespace ProgInger
 {
-    partial class FormCreateIncome
+    partial class FormCreate
     {
         /// <summary>
         /// Required designer variable.

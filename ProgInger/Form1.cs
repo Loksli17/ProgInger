@@ -185,7 +185,16 @@ namespace ProgInger
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormCreateIncome form = new FormCreateIncome();
+            FormCreate.type = "income";
+            FormCreate form = new FormCreate();
+            form.ShowDialog(this);
+            form.Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCreate.type = "lesion";
+            FormCreate form = new FormCreate();
             form.ShowDialog(this);
             form.Dispose();
         }
@@ -202,5 +211,6 @@ namespace ProgInger
         {
             if (monthDropView.SelectedItem != null) filterData();
         }
+
     }
 }
