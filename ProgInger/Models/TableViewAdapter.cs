@@ -16,7 +16,7 @@ namespace ProgInger
             this.view = view;
         }
 
-        public void initColumns(string[][] columns)
+        public void initColumns(string[][] columns, int[] widths)
         {
 
             for (int i = 0; i < columns.Length; i++)
@@ -25,6 +25,7 @@ namespace ProgInger
                 col.Name = columns[i][0];
                 col.HeaderText = columns[i][1];
                 col.CellTemplate = new DataGridViewTextBoxCell();
+                col.Width = widths[i];
                 view.Columns.Insert(i, col);
             }
         }

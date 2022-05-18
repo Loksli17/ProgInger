@@ -131,7 +131,7 @@ namespace ProgInger
                 new string[] { "money", "Поступление" },
             };
 
-            incomeTable.initColumns(columns);
+            incomeTable.initColumns(columns, new int[]{30, 70, 90, 55});
 
             incomeTable.pushRowsInGridView(incomeItems);
         }
@@ -148,7 +148,7 @@ namespace ProgInger
                 new string[] { "money", "Убыток" },
             };
 
-            lesionTable.initColumns(columns);
+            lesionTable.initColumns(columns, new int[] { 30, 70, 90, 55 });
 
             lesionTable.pushRowsInGridView(lesionItems);
         }

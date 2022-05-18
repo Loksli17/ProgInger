@@ -115,9 +115,6 @@ namespace ProgInger
 
             new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
             {
-                Debug.WriteLine(changeItem.Money);
-                Debug.WriteLine(changeItem.Id);
-
                 if (item.Id == changeItem.Id)
                 {
                     Debug.WriteLine(changeItem.Money);

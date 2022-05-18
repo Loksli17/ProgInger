@@ -61,8 +61,6 @@ namespace ProgInger
 
             item.DateTime = dateTime;
 
-            Debug.WriteLine("!!!!!!" + type);
-
             if (type == "income") incomeFileAdapter.updateItem(item);
             else lesionFileAdapter.updateItem(item);
         }

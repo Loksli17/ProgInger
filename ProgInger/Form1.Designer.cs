@@ -30,7 +30,11 @@ namespace ProgInger
         private void InitializeComponent()
         {
             this.incomesView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lecionsView = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@ namespace ProgInger
             this.result = new System.Windows.Forms.ColumnHeader();
             this.currentYearView = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).BeginInit();
             this.SuspendLayout();
@@ -56,33 +56,77 @@ namespace ProgInger
             // 
             this.incomesView.AllowUserToAddRows = false;
             this.incomesView.AllowUserToDeleteRows = false;
+            this.incomesView.AllowUserToResizeColumns = false;
+            this.incomesView.AllowUserToResizeRows = false;
             this.incomesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.incomesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewButtonColumn1,
             this.dataGridViewButtonColumn2});
-            this.incomesView.Location = new System.Drawing.Point(22, 144);
+            this.incomesView.Location = new System.Drawing.Point(24, 144);
             this.incomesView.Name = "incomesView";
             this.incomesView.ReadOnly = true;
             this.incomesView.RowTemplate.Height = 25;
-            this.incomesView.Size = new System.Drawing.Size(476, 366);
+            this.incomesView.Size = new System.Drawing.Size(420, 366);
             this.incomesView.TabIndex = 0;
             this.incomesView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.incomesView_CellContentClick);
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Удалить";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn1.Text = "Удалить";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn1.Width = 60;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.HeaderText = "Изменить";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn2.Text = "Изменить";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn2.Width = 70;
             // 
             // lecionsView
             // 
             this.lecionsView.AllowUserToAddRows = false;
             this.lecionsView.AllowUserToDeleteRows = false;
+            this.lecionsView.AllowUserToResizeColumns = false;
+            this.lecionsView.AllowUserToResizeRows = false;
             this.lecionsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lecionsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Edit});
-            this.lecionsView.Location = new System.Drawing.Point(524, 144);
+            this.lecionsView.Location = new System.Drawing.Point(467, 144);
             this.lecionsView.Name = "lecionsView";
             this.lecionsView.ReadOnly = true;
             this.lecionsView.RowTemplate.Height = 25;
-            this.lecionsView.Size = new System.Drawing.Size(504, 366);
+            this.lecionsView.Size = new System.Drawing.Size(420, 366);
             this.lecionsView.TabIndex = 1;
             this.lecionsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lecionsView_CellContentClick);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Удалить";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Delete.Text = "Удалить";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 60;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Изменить";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Edit.Text = "Изменить";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 70;
             // 
             // label1
             // 
@@ -96,7 +140,7 @@ namespace ProgInger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(524, 116);
+            this.label2.Location = new System.Drawing.Point(467, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 15);
             this.label2.TabIndex = 3;
@@ -164,7 +208,7 @@ namespace ProgInger
             this.month,
             this.result});
             this.monthView.HideSelection = false;
-            this.monthView.Location = new System.Drawing.Point(1055, 144);
+            this.monthView.Location = new System.Drawing.Point(912, 144);
             this.monthView.Name = "monthView";
             this.monthView.Size = new System.Drawing.Size(218, 366);
             this.monthView.TabIndex = 10;
@@ -184,7 +228,7 @@ namespace ProgInger
             // currentYearView
             // 
             this.currentYearView.AutoSize = true;
-            this.currentYearView.Location = new System.Drawing.Point(1055, 116);
+            this.currentYearView.Location = new System.Drawing.Point(912, 116);
             this.currentYearView.Name = "currentYearView";
             this.currentYearView.Size = new System.Drawing.Size(31, 15);
             this.currentYearView.TabIndex = 11;
@@ -193,49 +237,17 @@ namespace ProgInger
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1092, 116);
+            this.label5.Location = new System.Drawing.Point(949, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 15);
             this.label5.TabIndex = 12;
             this.label5.Text = "год";
             // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Удалить";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Удалить";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Изменить";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Изменить";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Удалить";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Удалить";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.HeaderText = "Изменить";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Изменить";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 547);
+            this.ClientSize = new System.Drawing.Size(1153, 547);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.currentYearView);
             this.Controls.Add(this.monthView);
