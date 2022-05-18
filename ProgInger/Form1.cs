@@ -194,6 +194,8 @@ namespace ProgInger
         private void yearDropView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(yearDropView.SelectedItem != null) filterData();
+
+            currentYearView.Text = yearDropView.SelectedItem.ToString();
         }
 
         private void monthDropView_SelectedIndexChanged(object sender, EventArgs e)

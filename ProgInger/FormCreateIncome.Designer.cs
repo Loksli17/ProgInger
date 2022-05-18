@@ -34,9 +34,9 @@ namespace ProgInger
             this.goalView = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.moneyView = new System.Windows.Forms.NumericUpDown();
-            this.dateTimeView = new System.Windows.Forms.DateTimePicker();
+            this.dateView = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.timeView = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.moneyView)).BeginInit();
@@ -50,6 +50,7 @@ namespace ProgInger
             this.createIncomeBtn.TabIndex = 0;
             this.createIncomeBtn.Text = "Добавить";
             this.createIncomeBtn.UseVisualStyleBackColor = true;
+            this.createIncomeBtn.Click += new System.EventHandler(this.createIncomeBtn_Click);
             // 
             // label1
             // 
@@ -88,12 +89,12 @@ namespace ProgInger
             this.moneyView.Size = new System.Drawing.Size(200, 23);
             this.moneyView.TabIndex = 4;
             // 
-            // dateTimeView
+            // dateView
             // 
-            this.dateTimeView.Location = new System.Drawing.Point(41, 187);
-            this.dateTimeView.Name = "dateTimeView";
-            this.dateTimeView.Size = new System.Drawing.Size(200, 23);
-            this.dateTimeView.TabIndex = 5;
+            this.dateView.Location = new System.Drawing.Point(41, 187);
+            this.dateView.Name = "dateView";
+            this.dateView.Size = new System.Drawing.Size(200, 23);
+            this.dateView.TabIndex = 5;
             // 
             // label3
             // 
@@ -104,14 +105,14 @@ namespace ProgInger
             this.label3.TabIndex = 6;
             this.label3.Text = "label3";
             // 
-            // dateTimePicker1
+            // timeView
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(288, 187);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 7;
+            this.timeView.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeView.Location = new System.Drawing.Point(288, 187);
+            this.timeView.Name = "timeView";
+            this.timeView.ShowUpDown = true;
+            this.timeView.Size = new System.Drawing.Size(200, 23);
+            this.timeView.TabIndex = 7;
             // 
             // label4
             // 
@@ -139,9 +140,9 @@ namespace ProgInger
             this.ClientSize = new System.Drawing.Size(556, 336);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.timeView);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimeView);
+            this.Controls.Add(this.dateView);
             this.Controls.Add(this.moneyView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.goalView);
@@ -162,9 +163,9 @@ namespace ProgInger
         private System.Windows.Forms.TextBox goalView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown moneyView;
-        private System.Windows.Forms.DateTimePicker dateTimeView;
+        private System.Windows.Forms.DateTimePicker dateView;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker timeView;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
     }
