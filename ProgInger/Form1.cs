@@ -227,6 +227,8 @@ namespace ProgInger
                 int eventIndex = int.Parse(incomesView.Rows[rowInd].Cells[0].Value.ToString());
                 incomeFileAdapter.removeById(eventIndex);
             }
+
+            filterData();
         }
 
 
@@ -244,6 +246,8 @@ namespace ProgInger
                 int eventIndex = int.Parse(lecionsView.Rows[rowInd].Cells[0].Value.ToString());
                 lesionFileAdapter.removeById(eventIndex);
             }
+
+            filterData();
         }
     }
 }
