@@ -109,6 +109,28 @@ namespace ProgInger
         }
 
 
+        public void updateItem(MoneyChangeItem changeItem)
+        {
+            JsonStructure json = getDataFromFile();
+
+            new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
+            {
+                Debug.WriteLine(changeItem.Money);
+                Debug.WriteLine(changeItem.Id);
+
+                if (item.Id == changeItem.Id)
+                {
+                    Debug.WriteLine(changeItem.Money);
+                    item.Goal     = changeItem.Goal;
+                    item.Money    = changeItem.Money;
+                    item.DateTime = changeItem.DateTime;
+                }
+            });
+
+            writeDataInFile(json);
+        }
+
+
         public MoneyChangeItem getLast()
         {
             JsonStructure json = getDataFromFile();
