@@ -57,9 +57,9 @@ namespace ProgInger
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(61, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Источник";
             // 
             // goalView
             // 
@@ -73,9 +73,9 @@ namespace ProgInger
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(288, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.label2.Text = "Сумма";
             // 
             // moneyView
             // 
@@ -101,9 +101,9 @@ namespace ProgInger
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(41, 169);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(32, 15);
             this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.label3.Text = "Дата";
             // 
             // timeView
             // 
@@ -119,9 +119,9 @@ namespace ProgInger
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(288, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(42, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
+            this.label4.Text = "Время";
             // 
             // label5
             // 
@@ -133,7 +133,7 @@ namespace ProgInger
             this.label5.TabIndex = 9;
             this.label5.Text = "Создание дохода";
             // 
-            // FormCreateIncome
+            // FormCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,8 +148,8 @@ namespace ProgInger
             this.Controls.Add(this.goalView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createIncomeBtn);
-            this.Name = "FormCreateIncome";
-            this.Text = "FormCreateIncome";
+            this.Name = "FormCreate";
+            this.Text = "Добавление поступления / убытка";
             ((System.ComponentModel.ISupportInitialize)(this.moneyView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

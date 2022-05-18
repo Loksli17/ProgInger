@@ -69,6 +69,13 @@ namespace ProgInger
             var bindingSourceMonth = new BindingSource();
             bindingSourceMonth.DataSource = months;
             monthDropView.DataSource = bindingSourceMonth;
+
+            DateTime date = DateTime.Today;
+
+            for(int i = 0; i < months.Count; i++)
+            {
+                if(i + 1 == date.Month) monthDropView.SelectedIndex = i;
+            }
         }
 
         private void monthViewBind()
@@ -113,6 +120,7 @@ namespace ProgInger
             var bindingSourceYears = new BindingSource();
             bindingSourceYears.DataSource = years;
             yearDropView.DataSource = bindingSourceYears;
+            yearDropView.SelectedIndex = years.Count - 1;
         }
 
  
@@ -189,6 +197,8 @@ namespace ProgInger
             FormCreate form = new FormCreate();
             form.ShowDialog(this);
             form.Dispose();
+
+            filterData();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -197,6 +207,8 @@ namespace ProgInger
             FormCreate form = new FormCreate();
             form.ShowDialog(this);
             form.Dispose();
+
+            filterData();
         }
 
 

@@ -30,11 +30,7 @@ namespace ProgInger
         private void InitializeComponent()
         {
             this.incomesView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lecionsView = new System.Windows.Forms.DataGridView();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,6 +44,10 @@ namespace ProgInger
             this.result = new System.Windows.Forms.ColumnHeader();
             this.currentYearView = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).BeginInit();
             this.SuspendLayout();
@@ -68,22 +68,6 @@ namespace ProgInger
             this.incomesView.TabIndex = 0;
             this.incomesView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.incomesView_CellContentClick);
             // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Delete";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Delete";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.HeaderText = "Edit";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Edit";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            // 
             // lecionsView
             // 
             this.lecionsView.AllowUserToAddRows = false;
@@ -99,22 +83,6 @@ namespace ProgInger
             this.lecionsView.Size = new System.Drawing.Size(504, 366);
             this.lecionsView.TabIndex = 1;
             this.lecionsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lecionsView_CellContentClick);
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -230,6 +198,38 @@ namespace ProgInger
             this.label5.Size = new System.Drawing.Size(25, 15);
             this.label5.TabIndex = 12;
             this.label5.Text = "год";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Удалить";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Удалить";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Изменить";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Изменить";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Удалить";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Удалить";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.HeaderText = "Изменить";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Изменить";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             // 
             // Form1
             // 
