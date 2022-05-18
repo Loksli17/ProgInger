@@ -30,7 +30,11 @@ namespace ProgInger
         private void InitializeComponent()
         {
             this.incomesView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lecionsView = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,21 +54,67 @@ namespace ProgInger
             // 
             // incomesView
             // 
+            this.incomesView.AllowUserToAddRows = false;
+            this.incomesView.AllowUserToDeleteRows = false;
             this.incomesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incomesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn1,
+            this.dataGridViewButtonColumn2});
             this.incomesView.Location = new System.Drawing.Point(22, 144);
             this.incomesView.Name = "incomesView";
+            this.incomesView.ReadOnly = true;
             this.incomesView.RowTemplate.Height = 25;
             this.incomesView.Size = new System.Drawing.Size(476, 366);
             this.incomesView.TabIndex = 0;
+            this.incomesView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.incomesView_CellContentClick);
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Delete";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Delete";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.HeaderText = "Edit";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Edit";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             // 
             // lecionsView
             // 
+            this.lecionsView.AllowUserToAddRows = false;
+            this.lecionsView.AllowUserToDeleteRows = false;
             this.lecionsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lecionsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete,
+            this.Edit});
             this.lecionsView.Location = new System.Drawing.Point(524, 144);
             this.lecionsView.Name = "lecionsView";
+            this.lecionsView.ReadOnly = true;
             this.lecionsView.RowTemplate.Height = 25;
             this.lecionsView.Size = new System.Drawing.Size(504, 366);
             this.lecionsView.TabIndex = 1;
+            this.lecionsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lecionsView_CellContentClick);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -199,8 +249,9 @@ namespace ProgInger
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lecionsView);
             this.Controls.Add(this.incomesView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Учет доходов и расходов";
             ((System.ComponentModel.ISupportInitialize)(this.incomesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecionsView)).EndInit();
             this.ResumeLayout(false);
@@ -225,6 +276,10 @@ namespace ProgInger
         private System.Windows.Forms.ColumnHeader result;
         private System.Windows.Forms.Label currentYearView;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }
 

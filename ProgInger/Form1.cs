@@ -212,5 +212,38 @@ namespace ProgInger
             if (monthDropView.SelectedItem != null) filterData();
         }
 
+
+        private void incomesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == incomesView.Columns.Count - 1)
+            {
+                //edit
+               
+            }
+            else if(e.ColumnIndex == incomesView.Columns.Count - 2)
+            {
+                //delete
+                int rowInd = e.RowIndex;
+                int eventIndex = int.Parse(incomesView.Rows[rowInd].Cells[0].Value.ToString());
+                incomeFileAdapter.removeById(eventIndex);
+            }
+        }
+
+
+        private void lecionsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == lecionsView.Columns.Count - 1)
+            {
+                //edit
+
+            }
+            else if (e.ColumnIndex == lecionsView.Columns.Count - 2)
+            {
+                //delete
+                int rowInd = e.RowIndex;
+                int eventIndex = int.Parse(lecionsView.Rows[rowInd].Cells[0].Value.ToString());
+                lesionFileAdapter.removeById(eventIndex);
+            }
+        }
     }
 }

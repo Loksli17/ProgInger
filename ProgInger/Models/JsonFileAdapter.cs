@@ -81,6 +81,19 @@ namespace ProgInger
             writeDataInFile(json);
         }
 
+
+        public void removeById(long id)
+        {
+            JsonStructure json = getDataFromFile();
+
+            new List<MoneyChangeItem>(json.data).ForEach((MoneyChangeItem item) =>
+            {
+                if (item.Id == id) json.data.Remove(item);
+            });
+
+            writeDataInFile(json);
+        }
+
         
         public List<MoneyChangeItem> getAll(int year, int month)
         {
