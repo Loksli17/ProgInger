@@ -61,8 +61,17 @@ namespace ProgInger
 
             item.DateTime = dateTime;
 
-            if (type == "income") incomeFileAdapter.updateItem(item);
-            else lesionFileAdapter.updateItem(item);
+            if (type == "income")
+            {
+                incomeFileAdapter.updateItem(item);
+                MessageBox.Show($"Доход был успешно отредактирован");
+            }
+            else
+            {
+                lesionFileAdapter.updateItem(item);
+                MessageBox.Show($"Убыток был успешно отредактирован");
+            }
+
         }
     }
 }

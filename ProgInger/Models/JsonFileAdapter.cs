@@ -74,7 +74,7 @@ namespace ProgInger
         }
 
 
-        public void save(MoneyChangeItem item)
+        public void saveItem(MoneyChangeItem item)
         {
             JsonStructure json = getDataFromFile();
             json.data.Add(item);

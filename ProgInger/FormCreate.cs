@@ -56,8 +56,16 @@ namespace ProgInger
 
             item.DateTime = dateTime;
 
-            if (type == "income") incomeFileAdapter.save(item); 
-            else                  lesionFileAdapter.save(item);
+            if (type == "income")
+            {
+                incomeFileAdapter.saveItem(item);
+                MessageBox.Show($"Доход был успешно добавлен");
+            }
+            else
+            {
+                lesionFileAdapter.saveItem(item);
+                MessageBox.Show($"Убыток был успешно добавлен");
+            }                
         }
     }
 }
