@@ -44,13 +44,14 @@ namespace ProgInger
             // 
             // editBtn
             // 
+            this.editBtn.BackColor = System.Drawing.Color.LightGreen;
             this.editBtn.ForeColor = System.Drawing.Color.Black;
             this.editBtn.Location = new System.Drawing.Point(25, 248);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(136, 54);
             this.editBtn.TabIndex = 1;
             this.editBtn.Text = "Изменить";
-            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.UseVisualStyleBackColor = false;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // label4
@@ -150,7 +151,7 @@ namespace ProgInger
             this.Controls.Add(this.dateViewEdit);
             this.Controls.Add(this.editBtn);
             this.Name = "FormEdit";
-            this.Text = "FormEdit";
+            this.Text = "Изменение поступления / убытка";
             ((System.ComponentModel.ISupportInitialize)(this.moneyViewEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
